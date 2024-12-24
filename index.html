@@ -1,98 +1,198 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Mr. R Radheshwar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R. Radheshwar - Personal Webpage</title>
+    <!-- Importing Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: "LM Roman12";
-        background-color: #ffffff;
-        margin-left: 1cm;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-      h1, h2, h3, p, li {
-        text-align: left;
-      }
-      h1 {
-        color: #006699;
-        font-size: 40px;
-        font-weight: bold;
-        margin-top: 25px;
-      }
-      h2 {
-        color: #4d4d4d;
-        font-size: 20px;
-        font-weight: bold;
-        margin-top: 15px;
-      }
-      h3 {
-        color: #006699;
-        font-size: 20px;
-        font-weight: bold;
-        margin-top: 10px;
-      }
-      p {
-        color: #000000;
-        font-size: 16px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-      }
-      li {
-        color: #000000;
-        font-size: 16px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-      .container {
-        width: 80%;
-        margin: auto;
-      }
-      .image-container {
-        width: 20%;
-        margin-right: 50px;
-      }
-      img {
-        width: 100%;
-        height: auto;
-      }
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            z-index: 1000;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            padding: 15px 20px;
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        /* Header */
+        header {
+            text-align: center;
+            padding: 100px 20px 50px;
+            background-color: #1a73e8;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        /* Main Content */
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 20px;
+        }
+        section h2 {
+            border-bottom: 2px solid #1a73e8;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .profile-img {
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #1a73e8;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 10px 0;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#qualifications">Qualifications</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Header Section -->
+    <header>
+        <h1>R. Radheshwar</h1>
+        <p>Research Scholar, Indian Institute of Information Technology Vadodara</p>
+    </header>
+    <!-- Main Content -->
     <div class="container">
-      <h1>Mr. R Radheshwar</h1>
-      <h3>Ph.D. Scholar</h3>
-      <p>Indian Institute of Information Technology Vadodara, Gandhinagar, Gujarat, India</p>
-      <p>
-        Email: <a href="mailto:radheshwar2@gmail.com">radheshwar2@gmail.com</a>
-      </p>
-      <p>
-        Hello! Welcome to my personal webpage. I am pursuing my Doctoral degree in Mathematics at IIIT Vadodara under the supervision of <a href="https://roy-dibyendu.github.io/">Dr. Dibyendu Roy</a>.</p>
-     
-      <h2>Academic Qualifications</h2>
-      <ul>
-        <li>M.Sc. in Mathematics from NIT, Jamshedpur.</li>
-        <li>B.Sc. in Mathematics and Computer Science from SASTRA University, Tamil Nadu.</li>
-      </ul>
-      <h2>Research Interest</h2>
-      <ul>
-       <li>Cryptology
-      </ul>
-      <h2>Experience</h2>
-      <ul>
-       <li><p>Worked as Junior Research Fellow in a SERB funded project under <a href="https://roy-dibyendu.github.io/">Dr. Dibyendu Roy</a>. </p>
-       <li><p>Worked as an associate in a ML project with AWS.</p>
-      </ul>
-      <h2>Publications</h2>
-      <ol>
-        <li>R Radheshwar, Meenakshi Kansal, Pierrick M&eacuteaux, Dibyendu Roy. "Differential Fault Attack on Rasta and FiLIP<sub>DSM</sub>".
-        <br> IEEE Transactions on Computers, Volume 72(8), pp 2418-2425, 2023.</li>
-      </ol>
+        <!-- About Section -->
+        <section id="about">
+            <img src="24034.jpg" alt="Portrait of R. Radheshwar" class="profile-img">
+            <p>Welcome to my personal webpage. I am pursuing my Doctoral degree in Mathematics at IIIT Vadodara under the supervision of <a href="https://roy-dibyendu.github.io/">Dr. Dibyendu Roy</a>.</p>
+        </section>
+        <!-- Qualifications Section -->
+        <section id="qualifications">
+            <h2>Academic Qualifications</h2>
+            <ul>
+                <li>M.Sc. in Mathematics from NIT, Jamshedpur.</li>
+                <li>B.Sc. in Mathematics and Computer Science from SASTRA University, Tamil Nadu.</li>
+            </ul>
+        </section>
+        <!-- Research Section -->
+        <section id="research">
+            <h2>Research Interest</h2>
+            <p>Cryptology</p>
+        </section>
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <ul>
+                <li>Junior Research Fellow in a SERB funded project under <a href="https://roy-dibyendu.github.io/">Dr. Dibyendu Roy</a>.</li>
+                <li>Associate in a Machine Learning project with AWS.</li>
+            </ul>
+        </section>
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <ol>
+            	<li>R Radheshwar and Dibyendu Roy. "Differential Fault Attack on ChaosForge". In the proceedings of 6th International Conference on Recent Advances in Information Technology (RAIT), IEEE, 2025 (To appear). </li>
+                <li>R. Radheshwar, Meenakshi Kansal, Pierrick Méaux, Dibyendu Roy. "Differential Fault Attack on Rasta and FiLIP<sub>DSM</sub>". <em>IEEE Transactions on Computers</em>, Volume 72(8), pp. 2418-2425, 2023.</li>
+            </ol>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:radheshwar2@gmail.com">radheshwar2@gmail.com</a></p>
+        </section>
     </div>
-    <div class="image-container">
-<img src="24034.jpg" alt="Profile Picture">
-</div>
+    <!-- Footer -->
+    <footer>
 
-  </body>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/r-radheshwar" target="_blank">LinkedIn</a></p>
+    </footer>
+</body>
 </html>
