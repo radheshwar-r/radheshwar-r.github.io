@@ -3,161 +3,487 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R. Radheshwar | Researcher</title>
+    <meta name="description" content="Personal webpage of Dr. R Radheshwar, researcher at C-DAC Bengaluru, working in cryptology and hardware security.">
+    <meta name="theme-color" content="#10243a">
+    <title>Dr. Radheshwar | Researcher</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Web font with system-font fallbacks for reliable rendering -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Global Styles */
+        :root {
+            color-scheme: light;
+            --ink: #17283b;
+            --muted: #5d6b7a;
+            --navy: #10243a;
+            --navy-light: #183751;
+            --accent: #168481;
+            --accent-dark: #0d6967;
+            --accent-soft: #eaf6f4;
+            --page: #f3f6f9;
+            --surface: #ffffff;
+            --line: #e1e8ee;
+            --shadow: 0 14px 34px rgba(16, 36, 58, 0.075);
+            --radius: 16px;
+            --content-width: 1120px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 88px;
+        }
+
         body {
-            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
+            background: var(--page);
+            color: var(--ink);
+            font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
         a {
-            color: #1a73e8;
+            color: var(--accent-dark);
             text-decoration: none;
+            text-underline-offset: 3px;
+            transition: color 160ms ease, text-decoration-color 160ms ease;
         }
 
         a:hover {
+            color: var(--navy-light);
             text-decoration: underline;
         }
 
-        /* Navigation */
+        a:focus-visible {
+            outline: 3px solid #9bd8d2;
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -60px;
+            left: 16px;
+            z-index: 2000;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: #fff;
+            color: var(--navy);
+            box-shadow: var(--shadow);
+        }
+
+        .skip-link:focus {
+            top: 12px;
+        }
+
+        /* Primary navigation */
         nav {
-            position: fixed;
-            width: 100%;
-            background: #222;
+            position: sticky;
+            top: 0;
             z-index: 1000;
+            width: 100%;
+            background: rgba(16, 36, 58, 0.97);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: 0 6px 22px rgba(12, 27, 43, 0.12);
+            backdrop-filter: blur(12px);
         }
 
         nav ul {
             display: flex;
+            align-items: center;
             justify-content: center;
+            gap: 4px;
+            width: min(var(--content-width), 100%);
+            margin: 0 auto;
+            padding: 8px 18px;
             list-style: none;
-            margin: 0;
-            padding: 0;
         }
 
         nav li {
-            margin: 0 15px;
+            flex: 0 0 auto;
+            margin: 0;
         }
 
         nav a {
             display: block;
-            padding: 15px 20px;
-            color: #fff;
+            padding: 9px 11px;
+            border-radius: 8px;
+            color: #eef4f8;
+            font-size: 0.84rem;
+            font-weight: 500;
+            white-space: nowrap;
         }
 
         nav a:hover {
-            background: #444;
-            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            text-decoration: none;
         }
 
-        /* Header */
+        /* Hero banner */
         header {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(58px, 8vw, 96px) 24px clamp(76px, 9vw, 112px);
+            background:
+                radial-gradient(ellipse at 82% 18%, rgba(47, 173, 163, 0.22), transparent 34%),
+                linear-gradient(125deg, var(--navy) 0%, #153550 62%, #14565c 100%);
+            color: #ffffff;
             text-align: center;
-            padding: 120px 20px 60px;
-            background: linear-gradient(to right, #1a73e8, #4285f4);
-            color: #fff;
+            isolation: isolate;
+        }
+
+        header::before,
+        header::after {
+            position: absolute;
+            z-index: -1;
+            display: block;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        header::before {
+            top: -170px;
+            right: -95px;
+            width: 460px;
+            height: 460px;
+        }
+
+        header::after {
+            right: 48px;
+            bottom: -260px;
+            width: 420px;
+            height: 420px;
         }
 
         header h1 {
-            font-size: 2.8em;
             margin: 0;
+            font-size: clamp(2.35rem, 5vw, 3.75rem);
+            font-weight: 800;
+            letter-spacing: -0.045em;
+            line-height: 1.16;
         }
 
         header p {
-            font-size: 1.2em;
-            margin-top: 10px;
+            margin: 18px 0 0;
+            color: #dce9f0;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 500;
+            letter-spacing: 0.015em;
         }
 
-        /* Main Container */
+        /* Content layout */
         .container {
-            width: 80%;
-            max-width: 1000px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            margin-top: 30px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: 22px;
+            width: min(var(--content-width), calc(100% - 40px));
+            margin: -34px auto 0;
+            padding: 0 0 14px;
+            position: relative;
+            z-index: 1;
         }
 
         section {
-            margin-bottom: 40px;
+            min-width: 0;
+            margin: 0;
+            padding: clamp(22px, 3vw, 30px);
+            background: var(--surface);
+            border: 1px solid rgba(219, 228, 235, 0.9);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        #about,
+        #contact {
+            grid-column: 1 / -1;
+        }
+
+        #position,
+        #qualifications,
+        #research,
+        #memberships,
+        #experience {
+            grid-column: span 6;
+        }
+
+        #publications {
+            grid-column: span 7;
+        }
+
+        #talks {
+            grid-column: span 5;
         }
 
         section h2 {
-            border-bottom: 2px solid #1a73e8;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+            position: relative;
+            margin: 0 0 21px;
+            padding: 0 0 13px;
+            border-bottom: 1px solid var(--line);
+            color: var(--navy);
+            font-size: clamp(1.13rem, 2vw, 1.32rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.4;
         }
 
-        /* Profile Image */
+        section h2::after {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 54px;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--accent);
+            content: "";
+        }
+
+        section p {
+            margin: 0;
+        }
+
+        /* Profile image and biography */
+        #about {
+            display: grid;
+            grid-template-columns: 170px minmax(0, 1fr);
+            align-items: center;
+            gap: clamp(24px, 4vw, 40px);
+            padding: clamp(26px, 4vw, 42px);
+        }
+
         .profile-img {
             display: block;
-            margin: 0 auto 25px;
-            width: 160px;
-            height: 160px;
+            width: 164px;
+            height: 164px;
+            margin: 0 auto;
+            border: 5px solid #ffffff;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #1a73e8;
+            background: #e8eef2;
+            box-shadow: 0 0 0 2px #b9deda, 0 10px 25px rgba(16, 36, 58, 0.12);
         }
 
-        ul, ol {
-            margin-left: 20px;
+        #about p {
+            color: #435367;
+            font-size: 1.015rem;
+            line-height: 1.9;
         }
 
-        /* Position Box */
+        #about strong {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin: 0;
+            padding-left: 1.3rem;
+        }
+
+        section ul,
+        section ol {
+            color: #435367;
+        }
+
+        section li {
+            padding-left: 3px;
+            margin: 0 0 10px;
+        }
+
+        section li:last-child {
+            margin-bottom: 0;
+        }
+
+        section ul li::marker {
+            color: var(--accent);
+        }
+
+        section ol li::marker {
+            color: var(--accent-dark);
+            font-weight: 700;
+        }
+
+        /* Current-position highlight */
         .position-box {
-            background: #f0f4ff;
-            padding: 15px;
-            border-left: 5px solid #1a73e8;
-            margin-bottom: 20px;
-            border-radius: 5px;
+            padding: 18px 20px;
+            margin: 0;
+            border: 1px solid #d1eae7;
+            border-left: 4px solid var(--accent);
+            border-radius: 10px;
+            background: var(--accent-soft);
+            color: #334d5a;
+            line-height: 1.9;
         }
 
-        /* Footer */
+        .position-box strong {
+            display: inline-block;
+            margin-bottom: 3px;
+            color: var(--navy);
+            font-size: 1.03rem;
+        }
+
+        /* Publication and talk entries */
+        #publications ol,
+        #talks ol {
+            padding-left: 1.45rem;
+        }
+
+        #publications li,
+        #talks li {
+            padding-left: 5px;
+            margin-bottom: 18px;
+        }
+
+        #publications li:last-child,
+        #talks li:last-child {
+            margin-bottom: 0;
+        }
+
+        #publications a,
+        #talks strong {
+            font-weight: 600;
+        }
+
+        #publications em,
+        #talks em {
+            color: var(--muted);
+        }
+
+        /* Contact and footer */
+        #contact p {
+            color: #435367;
+        }
+
         footer {
-            background: #222;
-            color: #fff;
+            margin-top: 34px;
+            padding: 25px 20px;
+            background: var(--navy);
+            color: #dce7ef;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95rem;
         }
 
         footer a {
-            color: #1a73e8;
+            color: #8de0d7;
+            font-weight: 600;
         }
 
-        /* Responsive */
-        @media(max-width: 768px){
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 900px) {
+            nav ul {
+                justify-content: flex-start;
+                overflow-x: auto;
+                overscroll-behavior-x: contain;
+                scrollbar-width: thin;
+            }
+
             .container {
-                width: 90%;
-                padding: 20px;
+                gap: 16px;
+                width: min(var(--content-width), calc(100% - 28px));
+            }
+
+            #publications,
+            #talks {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 640px) {
+            html {
+                scroll-padding-top: 72px;
             }
 
             nav ul {
-                flex-direction: column;
+                padding: 7px 10px;
             }
 
-            header h1 {
-                font-size: 2.2em;
+            nav a {
+                padding: 9px 10px;
+                font-size: 0.82rem;
+            }
+
+            header {
+                padding: 55px 18px 76px;
+            }
+
+            header p {
+                margin-top: 12px;
+            }
+
+            .container {
+                grid-template-columns: minmax(0, 1fr);
+                width: calc(100% - 24px);
+                gap: 14px;
+                margin-top: -28px;
+            }
+
+            section,
+            #about {
+                grid-column: 1 / -1;
+                padding: 22px;
+            }
+
+            #about {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 20px;
+                text-align: left;
+            }
+
+            .profile-img {
+                width: 142px;
+                height: 142px;
+            }
+
+            #about p {
+                font-size: 0.97rem;
+            }
+
+            footer {
+                margin-top: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 
 <body>
+<a class="skip-link" href="#about">Skip to main content</a>
 
 <!-- Navigation -->
-<nav>
+<nav aria-label="Main navigation">
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#position">Position</a></li>
@@ -173,23 +499,23 @@
 
 <!-- Header -->
 <header>
-    <h1>R. Radheshwar</h1>
+    <h1>Dr. R Radheshwar</h1>
     <p>Researcher | C-DAC Bengaluru</p>
 </header>
 
 <!-- Main Content -->
-<div class="container">
+<main class="container">
 
     <!-- About -->
-    <section id="about">
-        <img src="24034.jpg" alt="R. Radheshwar" class="profile-img">
+    <section id="about" aria-label="About">
+        <img src="radhe.jpg" alt="Dr. R Radheshwar" class="profile-img">
 
         <p>
             Welcome to my personal webpage. I am a Researcher at the
             <strong>Centre for Development of Advanced Computing (C-DAC), Bengaluru</strong>.
-            I have submitted my Ph.D. thesis in the Department of Mathematics and Computing, specializing in Cryptology, at
+            I have completed my Ph.D. in the Department of Mathematics and Computing, specializing in Cryptology, at
             <strong>IIIT Vadodara</strong> under the supervision of
-            <a href="https://roy-dibyendu.github.io/">Dr. Dibyendu Roy</a>.
+            <a href="https://roy-dibyendu.github.io/" target="_blank" rel="noopener noreferrer">Dr. Dibyendu Roy</a>.
         </p>
     </section>
 
@@ -251,51 +577,52 @@
         <ol>
             <li>
              R Radheshwar, Dibyendu Roy, Notan Roy and Madhav Verma,
-            <a href="https://ieeexplore.ieee.org/document/11716618">
+            <a href="https://ieeexplore.ieee.org/document/11716618" target="_blank" rel="noopener noreferrer">
                 "Differential Fault Attack on Dasta and Fasta"
             </a>.
             IEEE Access, 2026.
             </li>
             <li>
                 R Radheshwar, Dibyendu Roy, and Pantelimon Stanica.
-                <a href="https://link.springer.com/article/10.1007/s10623-026-01861-7">
+                <a href="https://link.springer.com/article/10.1007/s10623-026-01861-7" target="_blank" rel="noopener noreferrer">
                     "Multipath PA-PUFs generate all Boolean functions"
                 </a>.
                 Designs, Codes and Cryptography, Volume 94 (104), Springer, 2026.
             </li>
             <li>
                 R Radheshwar and Dibyendu Roy.
-                <a href="https://ieeexplore.ieee.org/document/11089261">
+                <a href="https://ieeexplore.ieee.org/document/11089261" target="_blank" rel="noopener noreferrer">
                     "Differential Fault Attack on ChaosForge"
                 </a>.
                 In the proceedings of 6th International Conference on Recent Advances in Information Technology (RAIT), IEEE, 2025.
             </li>
             <li>
                 R. Radheshwar, Meenakshi Kansal, Pierrick Méaux, Dibyendu Roy.
-                <a href="https://ieeexplore.ieee.org/document/10043711">
+                <a href="https://ieeexplore.ieee.org/document/10043711" target="_blank" rel="noopener noreferrer">
                     "Differential Fault Attack on Rasta and FiLIP<sub>DSM</sub>"
                 </a>.
                 <em>IEEE Transactions on Computers</em>, Volume 72(8), pp. 2418-2425, 2023.
             </li>
         </ol>
     </section>
-    <!-- Invited Talks -->
-        <section id="talks">
-            <h2>Invited Talks</h2>
 
-            <ol>
-                <li>
-                    <strong>From Arbiter PUFs to Boolean Functions</strong><br>
-                    <em>Invited Symposium Talk</em>, RMS 2026, MIT Bengaluru.
-                </li>
-                 <li>
-                    <strong>Differential Fault Attacks: Theory and Practice</strong><br>
-                    <em>Guest Speaker</em>, Conclave on Applied Cryptography and Machine Learning 2026,
-                    Amrita Vishwa Vidyapeetham Coimbatore.
-                </li>
-            </ol>
-            
+    <!-- Invited Talks -->
+    <section id="talks">
+        <h2>Invited Talks</h2>
+
+        <ol>
+            <li>
+                <strong>From Arbiter PUFs to Boolean Functions</strong><br>
+                <em>Invited Symposium Talk</em>, RMS 2026, MIT Bengaluru.
+            </li>
+            <li>
+                <strong>Differential Fault Attacks: Theory and Practice</strong><br>
+                <em>Guest Speaker</em>, Conclave on Applied Cryptography and Machine Learning 2026,
+                Amrita Vishwa Vidyapeetham Coimbatore.
+            </li>
+        </ol>
     </section>
+
     <!-- Contact -->
     <section id="contact">
         <h2>Contact</h2>
@@ -303,13 +630,13 @@
         <p>Email: <a href="mailto:radheshwar2@gmail.com">radheshwar2@gmail.com</a></p>
     </section>
 
-</div>
+</main>
 
 <!-- Footer -->
 <footer>
     <p>
         Connect with me on
-        <a href="https://www.linkedin.com/in/r-radheshwar-9891811b9" target="_blank">
+        <a href="https://www.linkedin.com/in/r-radheshwar-9891811b9" target="_blank" rel="noopener noreferrer">
             LinkedIn
         </a>
     </p>
